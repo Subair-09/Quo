@@ -124,16 +124,16 @@ export const PROJECTS: Project[] = [
   {
     id: "lanseed",
     title: "Lanseed",
-    subtitle: "Enterprise Business Operating System",
+    subtitle: "Real Estate Investment & Management Platform",
     category: "enterprise-saas",
-    description: "A comprehensive digital infrastructure delivering smart customer pipelines, billing automations, and live operations management.",
-    longDescription: "Lanseed transforms day-to-day enterprise operations. We engineered a robust web hub that aggregates client management, automated invoicing, secure client workspaces, and dynamic telemetry tracking. Built using React and Node.js with high-concurrency database schemas, Lanseed cuts weekly administrative task management times by over 40%.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    description: "A next-generation real estate platform streamlining property investment, portfolio management, and secure transactions.",
+    longDescription: "Lanseed is a next-generation real estate investment and property management platform. We engineered a robust digital ecosystem that simplifies property discovery, structural evaluation tracking, rental yield analytics, and secure transaction workflows. Designed for developers, agents, and buyers, the platform brings speed, complete transparency, and high-performance mapping tools to contemporary real estate operations.",
+    image: "https://imgur.com/4gEPEIO.png",
     technologies: ["React", "Express", "PostgreSQL", "Tailwind CSS", "Recharts", "Chart.js"],
     outcomes: [
-      "40% reduction in weekly billing operations",
-      "Aggregate uptime of 99.99% across intensive use cases",
-      "Secured 5,000+ active staff workspaces with multi-role access control"
+      "Reduced real estate transaction processing times by 50%",
+      "Supported dynamic listing tracking and property metrics validation",
+      "Streamlined communication and portfolio tracking for property investors"
     ],
     link: "https://lanseed.example.com",
     client: "Lanseed Enterprise Holdings"

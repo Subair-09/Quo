@@ -38,7 +38,7 @@ export default function AboutUs({ isDarkMode, onCtaClick }: AboutUsProps) {
             >
               <div className="w-full h-full rounded-xl overflow-hidden relative group">
                 <img
-                  src="https://imgur.com/UZ0WeFi.png"
+                  src="https://imgur.com/wicBKvA.png"
                   alt="Quotients Who We Are Showcase"
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   referrerPolicy="no-referrer"
