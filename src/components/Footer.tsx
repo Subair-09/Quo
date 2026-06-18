@@ -36,9 +36,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
 
   return (
     <footer
-      className={`border-t relative z-10 transition-colors duration-300 select-none ${
-        isDarkMode ? "bg-[#070b19] border-white/5 text-slate-400" : "bg-slate-50 border-slate-200 text-slate-500"
-      }`}
+      className="border-t border-[#1A1A1A] relative z-10 bg-[#050505] text-[#B5B5B5] select-none"
     >
       {/* Top Footer widget area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -50,36 +48,36 @@ export default function Footer({ isDarkMode }: FooterProps) {
               onClick={() => scrollToSection("hero")}
               className="flex items-center space-x-2 cursor-pointer group w-fit"
             >
-              <div className="relative w-9 h-9 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-300/10 shadow-md overflow-hidden p-0.5">
+              <div className="relative w-9 h-9 flex items-center justify-center rounded-xl bg-[#121212] border border-[#1A1A1A] shadow-md overflow-hidden p-0.5">
                 <img
                   src="https://imgur.com/LS8v8Bd.png"
                   alt="Quotients Logo"
-                  className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-110 animate-pulse"
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div>
-                <span className={`font-display font-black tracking-tight text-sm ${isDarkMode ? "text-white" : "text-brand-midnight"}`}>
+                <span className="font-display font-extrabold tracking-tight text-sm text-white group-hover:text-[#00FF66] transition-colors">
                   QUOTIENTS
                 </span>
-                <p className="text-[9px] font-mono tracking-widest text-slate-500">
+                <p className="text-[9px] font-mono tracking-widest text-[#707070] font-bold">
                   DIGITAL HORIZON
                 </p>
               </div>
             </div>
 
-            <p className="text-xs leading-relaxed max-w-sm">
+            <p className="text-xs leading-relaxed max-w-sm text-[#B5B5B5]">
               We design, develop, and deploy scalable enterprise platforms and high-speed cognitive AI networks, helping corporate institutions turn ideas into valuable digital products.
             </p>
 
             {/* Newsletter Sign up mock */}
             <div className="space-y-2 max-w-sm pt-2">
-              <p className={`text-[10px] font-mono tracking-widest uppercase ${isDarkMode ? "text-slate-300" : "text-slate-700"}`}>
+              <p className="text-[10px] font-mono tracking-widest uppercase text-[#707070] font-semibold">
                 Corporate Newsletter Registry
               </p>
 
               {subscribed ? (
-                <div className="flex items-center space-x-2 text-[11px] text-emerald-500 font-mono py-2 animate-pulse">
+                <div className="flex items-center space-x-2 text-[11px] text-[#00FF66] font-mono py-2 animate-pulse">
                   <CheckCircle size={12} />
                   <span>Subscribed to systems briefs.</span>
                 </div>
@@ -90,15 +88,15 @@ export default function Footer({ isDarkMode }: FooterProps) {
                     value={subEmail}
                     onChange={(e) => setSubEmail(e.target.value)}
                     placeholder="name@company.com"
-                    className="w-full bg-white/5 dark:bg-white/2.5 border border-slate-300 dark:border-white/5 rounded-xl px-4 py-3 text-[11px] outline-none focus:border-brand-cyan transition-colors pr-10"
+                    className="w-full bg-[#0A0A0A] border border-[#1A1A1A] rounded-xl px-4 py-3 text-[11px] outline-none focus:border-[#00FF66] text-white transition-colors pr-10 hover:border-[#222]"
                     required
                   />
                   <button
                     type="submit"
-                    className="absolute right-2 p-1.5 rounded-lg bg-brand-electric hover:bg-brand-electric/80 text-white cursor-pointer transition-colors"
+                    className="absolute right-2 p-1.5 rounded-lg bg-[#00FF66] hover:bg-[#00E65C] text-black cursor-pointer transition-colors"
                     aria-label="Subscribe to newsletter"
                   >
-                    <ArrowRight size={12} />
+                    <ArrowRight size={12} strokeWidth={2.5} />
                   </button>
                 </form>
               )}
@@ -107,7 +105,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
 
           {/* Col 2: Services Quick Lists (3/12 col span) */}
           <div className="lg:col-span-3 text-left space-y-4">
-            <h4 className={`text-[10.5px] font-mono tracking-widest uppercase ${isDarkMode ? "text-white" : "text-brand-midnight"} font-bold`}>
+            <h4 className="text-[10.5px] font-mono tracking-widest uppercase text-white font-bold">
               Our Core Services
             </h4>
             <ul className="space-y-2.5 text-xs">
@@ -122,7 +120,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
                 <li key={link}>
                   <button
                     onClick={() => scrollToSection("services")}
-                    className="hover:text-brand-cyan transition-colors text-left cursor-pointer"
+                    className="hover:text-[#00FF66] transition-colors text-left cursor-pointer"
                   >
                     {link}
                   </button>
@@ -133,7 +131,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
 
           {/* Col 3: Quick Links (2/12 col span) */}
           <div className="lg:col-span-2 text-left space-y-4">
-            <h4 className={`text-[10.5px] font-mono tracking-widest uppercase ${isDarkMode ? "text-white" : "text-brand-midnight"} font-bold`}>
+            <h4 className="text-[10.5px] font-mono tracking-widest uppercase text-white font-bold">
               Links Structure
             </h4>
             <ul className="space-y-2.5 text-xs">
@@ -149,7 +147,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
                 <li key={link.id}>
                   <button
                     onClick={() => scrollToSection(link.id)}
-                    className="hover:text-brand-cyan transition-colors text-left cursor-pointer"
+                    className="hover:text-[#00FF66] transition-colors text-left cursor-pointer"
                   >
                     {link.label}
                   </button>
@@ -160,18 +158,18 @@ export default function Footer({ isDarkMode }: FooterProps) {
 
           {/* Col 4: Corporate Registration & Info (3/12 col span) */}
           <div className="lg:col-span-3 text-left space-y-4">
-            <h4 className={`text-[10.5px] font-mono tracking-widest uppercase ${isDarkMode ? "text-white" : "text-brand-midnight"} font-bold`}>
+            <h4 className="text-[10.5px] font-mono tracking-widest uppercase text-white font-bold">
               Corporate Scope
             </h4>
             <div className="space-y-3.5 text-xs">
               <div>
-                <p className="font-semibold text-slate-500 uppercase tracking-widest text-[9.5px] font-mono">Registration Code</p>
-                <p className="mt-0.5 text-slate-400 dark:text-slate-300 font-mono">RC-1495142-NG</p>
+                <p className="font-semibold text-[#707070] uppercase tracking-widest text-[9.5px] font-mono font-bold">Registration Code</p>
+                <p className="mt-0.5 text-white font-mono">RC-1495142-NG</p>
               </div>
 
               <div>
-                <p className="font-semibold text-slate-500 uppercase tracking-widest text-[9.5px] font-mono">Operations Address</p>
-                <p className="mt-0.5 text-slate-400 dark:text-slate-300">
+                <p className="font-semibold text-[#707070] uppercase tracking-widest text-[9.5px] font-mono font-bold">Operations Address</p>
+                <p className="mt-0.5 text-white">
                   Horizon Tech Suite 300, 10 Kingsway Road, Ikoyi, Lagos
                 </p>
               </div>
@@ -179,7 +177,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
               <div className="pt-2">
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/5 bg-slate-100 dark:bg-white/2.5 hover:bg-slate-200 dark:hover:bg-white/10 transition-colors text-[10.5px] font-semibold text-brand-electric dark:text-brand-cyan cursor-pointer uppercase"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-[#00FF66]/20 bg-[#121212] hover:bg-[#00FF66] hover:text-black transition-colors text-[10.5px] font-semibold text-[#00FF66] cursor-pointer uppercase font-mono font-bold"
                 >
                   <MessageSquare size={11} />
                   <span>Free Consultation Session</span>
@@ -192,42 +190,42 @@ export default function Footer({ isDarkMode }: FooterProps) {
       </div>
 
       {/* Bottom Ribbon / Info Bar from the Sleek Interface Theme */}
-      <div className={`border-t transition-colors duration-300 py-8 ${isDarkMode ? "bg-[#0B1020] border-white/10 text-slate-400" : "bg-white border-slate-200 text-slate-500"}`}>
+      <div className="border-t border-[#1D1D1D] py-8 bg-[#0D0D0D] text-[#707070]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 lg:gap-12 w-full md:w-auto">
             {/* Project Timeline widget */}
             <div className="flex flex-col text-left">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono">Project Timeline</span>
+              <span className="text-[10px] font-bold text-[#707070] lg:tracking-widest uppercase font-mono">Project Timeline</span>
               <div className="flex items-center gap-2 mt-1.5 select-none">
-                <div className={`flex items-center text-[11px] font-bold ${isDarkMode ? "text-slate-300" : "text-[#0B1020]"}`}>
-                  <span className={`w-4 h-4 rounded-full mr-2 flex items-center justify-center text-[8px] ${isDarkMode ? "bg-white/10 border border-white/20 text-white" : "bg-slate-100 border border-slate-300 text-[#0B1020]"}`}>1</span> Strategy
+                <div className="flex items-center text-[11px] font-bold text-[#B5B5B5]">
+                  <span className="w-4 h-4 rounded-full mr-2 flex items-center justify-center text-[8px] bg-[#1A1A1A] border border-[#1A1A1A] text-white">1</span> Strategy
                 </div>
-                <div className="w-4 h-px bg-slate-300/30"></div>
-                <div className={`flex items-center text-[11px] font-bold ${isDarkMode ? "text-brand-cyan" : "text-[#2563EB]"}`}>
-                  <span className="w-4 h-4 bg-blue-600 text-white rounded-full mr-2 flex items-center justify-center text-[8px]">2</span> Design
+                <div className="w-4 h-px bg-[#1A1A1A]"></div>
+                <div className="flex items-center text-[11px] font-bold text-[#00FF66]">
+                  <span className="w-4 h-4 bg-[#00FF66] text-black rounded-full mr-2 flex items-center justify-center text-[8px] font-bold">2</span> Buildout
                 </div>
-                <div className="w-4 h-px bg-slate-300/30"></div>
-                <div className="flex items-center text-[11px] font-bold text-slate-400">
-                  <span className={`w-4 h-4 rounded-full mr-2 flex items-center justify-center text-[8px] ${isDarkMode ? "bg-white/5 border border-white/10 text-slate-500" : "bg-slate-50 border border-slate-200 text-slate-400"}`}>3</span> Build
+                <div className="w-4 h-px bg-[#1A1A1A]"></div>
+                <div className="flex items-center text-[11px] font-bold text-[#707070]">
+                  <span className="w-4 h-4 rounded-full mr-2 flex items-center justify-center text-[8px] bg-[#121212] border border-[#1A1A1A] text-[#707070]">3</span> Deliver
                 </div>
               </div>
             </div>
 
             {/* Vertical Separator */}
-            <div className="hidden md:block h-10 w-px bg-slate-300/30"></div>
+            <div className="hidden md:block h-10 w-px bg-[#1A1A1A]"></div>
 
             {/* Contact Center widget */}
             <div className="flex flex-col text-left">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-mono">Contact Center</span>
-              <span className={`text-sm font-bold mt-0.5 font-mono ${isDarkMode ? "text-[#00D4FF]" : "text-[#0B1020]"}`}>
-                hello@quotients.horizon
+              <span className="text-[10px] font-bold text-[#707070] lg:tracking-widest uppercase font-mono">Contact Center</span>
+              <span className="text-sm font-bold mt-0.5 font-mono text-[#00FF66]">
+                hello@quotientsdh.com
               </span>
             </div>
           </div>
 
           {/* Copyright text */}
-          <div className="text-[11px] font-mono text-slate-400 text-left md:text-right w-full md:w-auto pt-4 md:pt-0 border-t md:border-t-0 border-slate-300/10">
-            © 2026 Quotients Digital Horizon Limited. <span className="text-slate-400/60 ml-1">Intelligent Systems Architecture.</span>
+          <div className="text-[11px] font-mono text-[#707070] text-left md:text-right w-full md:w-auto pt-4 md:pt-0 border-t md:border-t-0 border-[#1A1A1A]">
+            © 2026 Quotients Digital Horizon Limited. <span className="text-white/40 ml-1 font-bold">Intelligent Systems Architecture.</span>
           </div>
         </div>
       </div>

@@ -9,7 +9,6 @@ import {
   Rocket,
   LineChart,
   CheckCircle,
-  HelpCircle,
   Sparkles
 } from "lucide-react";
 
@@ -110,27 +109,25 @@ export default function DevProcess({ isDarkMode }: DevProcessProps) {
   return (
     <section
       id="process"
-      className={`py-20 lg:py-24 relative overflow-hidden transition-colors duration-300 ${
-        isDarkMode ? "bg-[#0B1020] text-white" : "bg-white text-[#0F172A]"
-      }`}
+      className="py-20 lg:py-24 relative overflow-hidden bg-[#0D0D0D] text-white border-t border-[#1a1a1a]/40"
     >
       {/* Decorative gradient orbs */}
-      <div className="absolute top-10 right-10 w-96 h-96 rounded-full bg-brand-electric/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-brand-cyan/5 blur-3xl pointer-events-none" />
+      <div className="absolute top-10 right-10 w-96 h-96 rounded-full bg-[#00FF66]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-[#00C853]/3 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
         {/* Header */}
         <div className="max-w-2xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center space-x-1.5 py-1 px-3 rounded-full border border-brand-electric/25 bg-brand-electric/10 text-[10px] font-mono tracking-widest text-brand-electric dark:text-brand-cyan uppercase">
+          <div className="inline-flex items-center space-x-1.5 py-1 px-3.5 rounded-full border border-[#00FF66]/20 bg-[#00FF66]/5 text-[#00FF66] text-[10px] font-mono tracking-widest uppercase font-bold">
             <Sparkles size={11} />
             <span>OPERATIONAL TIMELINE</span>
           </div>
 
-          <h2 className={`font-display text-3xl sm:text-4xl font-extrabold tracking-tight ${isDarkMode ? "text-white" : "text-brand-midnight"}`}>
+          <h2 className="font-display text-4xl font-extrabold tracking-tight text-white">
             How We Work
           </h2>
-          <p className={`text-sm font-sans leading-relaxed ${isDarkMode ? "text-slate-300" : "text-slate-500"}`}>
+          <p className="text-sm font-sans leading-relaxed text-[#B5B5B5]">
             Our methodical engineering workflow ensures predictable, scalable, and premium software delivery cycles. Explore each phase below.
           </p>
         </div>
@@ -145,19 +142,17 @@ export default function DevProcess({ isDarkMode }: DevProcessProps) {
               <button
                 key={st.number}
                 onClick={() => setActiveStep(idx)}
-                className={`flex items-center space-x-2.5 px-4.5 py-3 rounded-xl border text-xs font-semibold tracking-wider transition-all duration-300 shrink-0 cursor-pointer ${
+                className={`flex items-center space-x-2.5 px-4.5 py-3 rounded-xl border text-xs font-semibold tracking-wider transition-all duration-350 shrink-0 cursor-pointer ${
                   isCurrent
-                    ? "bg-brand-electric text-white border-brand-electric shadow-lg shadow-brand-electric/15"
-                    : isDarkMode
-                    ? "bg-white/5 border-white/5 text-slate-300 hover:bg-white/10"
-                    : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
+                    ? "bg-[#00FF66] text-black border-[#00FF66] font-bold shadow-lg shadow-[#00FF66]/10"
+                    : "bg-[#121212] border-[#1A1A1A] text-[#B5B5B5] hover:border-[#00FF66]/35"
                 }`}
               >
-                <span className={`text-[10px] font-mono ${isCurrent ? "text-brand-cyan" : "text-slate-400"}`}>
+                <span className={`text-[10px] font-mono ${isCurrent ? "text-slate-900" : "text-[#707070]"}`}>
                   {st.number}
                 </span>
                 <span>{st.title.split(" ")[0]}</span>
-                <ActiveIcon size={13} className={`animate-pulse ${isCurrent ? "text-brand-cyan" : "text-slate-400"}`} />
+                <ActiveIcon size={13} className={`animate-pulse ${isCurrent ? "text-slate-900" : "text-[#00FF66]"}`} />
               </button>
             );
           })}
@@ -172,52 +167,50 @@ export default function DevProcess({ isDarkMode }: DevProcessProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className={`p-6 sm:p-8 rounded-3xl border ${
-                isDarkMode ? "bg-brand-midnight/40 border-white/10" : "bg-slate-50 border-slate-200"
-              }`}
+              className="p-6 sm:p-8 rounded-3xl border border-[#1A1A1A] bg-[#121212] text-white shadow-xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 
                 {/* Left col: Title and Bio */}
                 <div className="md:col-span-7 space-y-4">
                   <div className="flex items-center space-x-3.5">
-                    <span className="font-mono text-3xl font-extrabold text-brand-purple tracking-widest leading-none">
+                    <span className="font-mono text-3xl font-extrabold text-[#00FF66] tracking-widest leading-none">
                       {steps[activeStep].number}
                     </span>
                     <div>
-                      <h3 className="font-display font-extrabold text-lg leading-tight uppercase tracking-wider">
+                      <h3 className="font-display font-extrabold text-base leading-tight uppercase tracking-wider text-white">
                         {steps[activeStep].title}
                       </h3>
-                      <p className={`text-[11px] font-mono mt-0.5 tracking-wide ${isDarkMode ? "text-brand-cyan" : "text-brand-electric"}`}>
+                      <p className="text-[11px] font-mono mt-0.5 tracking-wide text-[#00FF66] uppercase font-bold">
                         {steps[activeStep].tagline}
                       </p>
                     </div>
                   </div>
 
-                  <p className={`text-xs font-sans leading-relaxed tracking-wide ${isDarkMode ? "text-slate-300" : "text-slate-600"}`}>
+                  <p className="text-xs font-sans leading-relaxed tracking-wide text-[#B5B5B5]">
                     {steps[activeStep].description}
                   </p>
 
-                  <div className="p-3.5 rounded-xl bg-brand-purple/5 border border-brand-purple/10 flex items-center space-x-3">
-                    <FileText size={15} className="text-brand-purple shrink-0" />
+                  <div className="p-3.5 rounded-xl bg-black/40 border border-[#00FF66]/20 flex items-center space-x-3">
+                    <FileText size={15} className="text-[#00FF66] shrink-0 animate-pulse" />
                     <div>
-                      <p className="text-[10px] font-mono text-slate-400 uppercase">Phase Deliverable Output:</p>
-                      <p className="text-xs font-semibold font-sans mt-0.5">{steps[activeStep].output}</p>
+                      <p className="text-[10px] font-mono text-[#707070] uppercase font-bold">Phase Deliverable Output:</p>
+                      <p className="text-xs font-semibold font-sans mt-0.5 text-white">{steps[activeStep].output}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Right col: Checklists */}
-                <div className="md:col-span-5 p-5 rounded-2xl bg-white/2.5 border border-white/5 space-y-3">
-                  <h4 className="font-display font-bold text-xs tracking-wider uppercase text-slate-400">
+                <div className="md:col-span-5 p-5 rounded-2xl bg-black/30 border border-[#1A1A1A] space-y-3">
+                  <h4 className="font-display font-bold text-xs tracking-wider uppercase text-[#707070]">
                     Phase Milestones Check:
                   </h4>
                   
                   <div className="space-y-2.5">
                     {steps[activeStep].checklist.map((item, id) => (
                       <div key={id} className="flex items-start space-x-2 text-xs">
-                        <CheckCircle size={13} className="text-emerald-500 mt-1 shrink-0" />
-                        <span className={isDarkMode ? "text-slate-300" : "text-slate-600"}>{item}</span>
+                        <CheckCircle size={13} className="text-[#00FF66] mt-0.5 shrink-0" />
+                        <span className="text-[#B5B5B5]">{item}</span>
                       </div>
                     ))}
                   </div>

@@ -87,9 +87,7 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen text-sans transition-colors duration-300 antialiased overflow-x-hidden ${
-        isDarkMode ? "bg-brand-midnight text-white" : "bg-brand-bg text-brand-text"
-      }`}
+      className="min-h-screen text-sans antialiased overflow-x-hidden bg-[#050505] text-white"
     >
       {/* Dynamic Navbar */}
       <Navbar

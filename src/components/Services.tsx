@@ -40,13 +40,11 @@ export default function Services({ isDarkMode, onCtaClick }: ServicesProps) {
   return (
     <section
       id="services"
-      className={`py-20 lg:py-24 relative overflow-hidden transition-colors duration-300 ${
-        isDarkMode ? "bg-[#0B1020] text-white" : "bg-[#F8FAFC] text-[#0F172A]"
-      }`}
+      className="py-20 lg:py-24 relative overflow-hidden bg-[#050505] text-white"
     >
-      {/* Background aesthetics */}
-      <div className="absolute right-0 top-1/4 w-96 h-96 rounded-full bg-[#00D4FF]/5 blur-3xl pointer-events-none" />
-      <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-[#7C3AED]/5 blur-3xl pointer-events-none" />
+      {/* Background aesthetics - subtle neon green glows */}
+      <div className="absolute right-0 top-1/4 w-96 h-96 rounded-full bg-[#00FF66]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-[#00C853]/4 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Section Header */}
@@ -55,20 +53,16 @@ export default function Services({ isDarkMode, onCtaClick }: ServicesProps) {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className={`inline-flex items-center space-x-1.5 py-1 px-3 rounded-full border text-[10px] font-mono tracking-widest uppercase ${
-              isDarkMode
-                ? "border-[#00D4FF]/20 bg-[#00D4FF]/5 text-[#00D4FF]"
-                : "border-[#2563EB]/20 bg-[#2563EB]/5 text-[#2563EB]"
-            }`}
+            className="inline-flex items-center space-x-1.5 py-1 px-3.5 rounded-full border border-[#00FF66]/20 bg-[#00FF66]/5 text-[#00FF66] text-[10px] font-mono tracking-widest uppercase font-bold"
           >
             <Sparkles size={11} />
             <span>SOLUTIONS SUITE</span>
           </motion.div>
           
-          <h2 className={`font-display text-3xl sm:text-4xl font-extrabold tracking-tight ${isDarkMode ? "text-white" : "text-[#0B1020]"}`}>
+          <h2 className="font-display text-4xl font-extrabold tracking-tight text-white">
             Our Core Services
           </h2>
-          <p className={`text-sm sm:text-base font-sans leading-relaxed ${isDarkMode ? "text-slate-300" : "text-slate-500"}`}>
+          <p className="text-sm font-sans leading-relaxed text-[#B5B5B5] max-w-xl mx-auto">
             Comprehensive digital solutions designed for modern businesses. We combine technical rigor with deep AI expertise.
           </p>
         </div>
@@ -86,38 +80,29 @@ export default function Services({ isDarkMode, onCtaClick }: ServicesProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`relative rounded-2xl border p-6 overflow-hidden transition-all duration-300 flex flex-col justify-between ${
-                  isDarkMode
-                    ? "bg-white/5 border-white/10 backdrop-blur-xl hover:bg-white/10 hover:border-white/20 shadow-xl"
-                    : "bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-xl hover:bg-slate-50/50 shadow-sm"
-                } group`}
+                className="relative rounded-2xl border border-[#1A1A1A] p-6 bg-[#121212] overflow-hidden transition-all duration-350 flex flex-col justify-between hover:border-[#00FF66]/30 hover:scale-[1.01] hover:shadow-2xl hover:shadow-[#00FF66]/5 group"
               >
                 {/* Visual Top Highlight bar */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${srv.gradient} opacity-80`} />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00FF66] to-[#00C853] opacity-60" />
 
                 <div>
                   {/* Card Icon Header */}
                   <div className="flex items-start justify-between mb-5">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${srv.gradient} text-white shadow-md relative`}>
+                    <div className="p-3 rounded-xl bg-[#1A1A1A] text-[#00FF66] border border-[#00FF66]/20 shadow-md relative transition-colors group-hover:bg-[#00FF66] group-hover:text-black">
                       <IconComponent size={20} />
-                      <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     
-                    <span className={`text-[10px] font-mono tracking-wider ${isDarkMode ? "text-slate-500" : "text-slate-400"}`}>
+                    <span className="text-[10px] font-mono tracking-wider text-[#707070]">
                       [0{idx + 1}]
                     </span>
                   </div>
 
                   {/* Service Card Body */}
-                  <h3 className={`font-display font-extrabold text-base mb-2.5 transition-colors group-hover:text-brand-electric dark:group-hover:text-brand-cyan ${
-                    isDarkMode ? "text-white" : "text-brand-midnight"
-                  }`}>
+                  <h3 className="font-display font-bold text-lg mb-2.5 transition-colors text-white group-hover:text-[#00FF66]">
                     {srv.title}
                   </h3>
                   
-                  <p className={`text-xs font-sans tracking-wide leading-relaxed mb-6 ${
-                    isDarkMode ? "text-slate-300" : "text-slate-600"
-                  }`}>
+                  <p className="text-xs font-sans tracking-wide leading-relaxed mb-6 text-[#B5B5B5]">
                     {srv.description}
                   </p>
                 </div>
@@ -130,17 +115,17 @@ export default function Services({ isDarkMode, onCtaClick }: ServicesProps) {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="overflow-hidden mb-6 border-t border-slate-200/10 pt-4"
+                      className="overflow-hidden mb-6 border-t border-[#1A1A1A] pt-4"
                     >
-                      <p className={`text-[11px] font-mono tracking-widest text-brand-purple mb-3 uppercase`}>
+                      <p className="text-[10px] font-mono tracking-widest text-[#00FF66] mb-3 uppercase font-bold">
                         Key Deliverables:
                       </p>
                       
                       <ul className="space-y-2 mb-4">
                         {srv.details.map((detail, dIdx) => (
                           <li key={dIdx} className="flex items-start space-x-2 text-[11px] md:text-xs">
-                            <Check size={12} className="text-brand-cyan mt-1 flex-shrink-0" />
-                            <span className={isDarkMode ? "text-slate-300" : "text-slate-600"}>{detail}</span>
+                            <Check size={12} className="text-[#00FF66] mt-0.5 flex-shrink-0" />
+                            <span className="text-[#B5B5B5]">{detail}</span>
                           </li>
                         ))}
                       </ul>
@@ -150,9 +135,7 @@ export default function Services({ isDarkMode, onCtaClick }: ServicesProps) {
                         {srv.features.map((feat) => (
                           <span
                             key={feat}
-                            className={`text-[9px] font-medium px-2 py-0.5 rounded-full ${
-                              isDarkMode ? "bg-white/5 border border-white/10 text-slate-300" : "bg-slate-100 border border-slate-200 text-slate-600"
-                            }`}
+                            className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-black/60 border border-[#1A1A1A] text-[#B5B5B5] hover:border-[#00FF66]/25 transition-colors"
                           >
                             {feat}
                           </span>
@@ -163,12 +146,10 @@ export default function Services({ isDarkMode, onCtaClick }: ServicesProps) {
                 </AnimatePresence>
 
                 {/* Footer Buttons */}
-                <div className="flex items-center justify-between border-t border-slate-200/10 pt-4 mt-auto">
+                <div className="flex items-center justify-between border-t border-[#1A1A1A] pt-4 mt-auto">
                   <button
                     onClick={() => toggleExpand(srv.id)}
-                    className={`flex items-center text-[11px] font-semibold tracking-wide cursor-pointer focus:outline-none hover:underline ${
-                      isDarkMode ? "text-slate-400 hover:text-white" : "text-slate-500 hover:text-brand-midnight"
-                    }`}
+                    className="flex items-center text-[11px] font-semibold tracking-wide cursor-pointer focus:outline-none text-[#707070] hover:text-[#00FF66] transition-colors"
                   >
                     {isExpanded ? (
                       <>
@@ -183,7 +164,7 @@ export default function Services({ isDarkMode, onCtaClick }: ServicesProps) {
 
                   <button
                     onClick={() => onCtaClick("contact", srv.title)}
-                    className="p-2 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-brand-electric hover:text-white dark:hover:bg-brand-electric hover:-translate-y-0.5 active:translate-y-0 text-slate-500 dark:text-slate-300 transition-all duration-200 cursor-pointer"
+                    className="p-2 ml-2 rounded-xl bg-[#1A1A1A] border border-[#1A1A1A] text-[#B5B5B5] group-hover:border-[#00FF66]/35 group-hover:text-[#00FF66] hover:bg-[#00FF66]/10 active:scale-95 transition-all duration-200 cursor-pointer"
                     aria-label={`Get started with ${srv.title}`}
                   >
                     <ArrowRight size={13} />
