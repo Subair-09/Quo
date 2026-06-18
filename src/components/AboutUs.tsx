@@ -55,13 +55,13 @@ export default function AboutUs({ isDarkMode, onCtaClick }: AboutUsProps) {
                 WHO WE ARE
               </span>
               <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                About Quotients Digital Horizon Limited
+                About Quotients Digital Horizon Ltd
               </h2>
             </div>
 
             <div className="space-y-4 text-xs sm:text-sm font-sans leading-relaxed tracking-wide text-[#B5B5B5]">
               <p className="font-semibold text-white">
-                At Quotients Digital Horizon Limited, we help businesses turn ideas into powerful digital products.
+                At Quotients Digital Horizon Ltd, we help businesses turn ideas into powerful digital products.
               </p>
               <p>
                 Our expertise spans custom software development, AI-powered applications, enterprise web solutions, and digital transformation consulting.

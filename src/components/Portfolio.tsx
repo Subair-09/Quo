@@ -43,7 +43,7 @@ export default function Portfolio({ isDarkMode }: PortfolioProps) {
           </h2>
           
           <p className="text-sm font-sans leading-relaxed text-[#B5B5B5]">
-            Discover how Quotients Digital Horizon Limited couples system engineering with tactical prompt architectures to deploy valuable business tools.
+            Discover how Quotients Digital Horizon Ltd couples system engineering with tactical prompt architectures to deploy valuable business tools.
           </p>
         </div>
 

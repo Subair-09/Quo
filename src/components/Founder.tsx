@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Quote, Eye, Target, Sparkles, Award, ShieldCheck } from "lucide-react";
+import { Quote, Eye, Target, Sparkles, Award, ShieldCheck, Linkedin } from "lucide-react";
 
 interface FounderProps {
   isDarkMode: boolean;
@@ -28,7 +28,7 @@ export default function Founder({ isDarkMode }: FounderProps) {
             Meet Our Founder & Guiding Core Guarantees
           </h2>
           <p className="text-xs sm:text-sm font-sans tracking-wide text-[#B5B5B5] leading-relaxed">
-            The foundation of Quotients Digital Horizon Limited is built upon premium software engineering craftsmanship, absolute operational transparency, and verifiable result delivery.
+            The foundation of Quotients Digital Horizon Ltd is built upon premium software engineering craftsmanship, absolute operational transparency, and verifiable result delivery.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function Founder({ isDarkMode }: FounderProps) {
                 <div className="relative w-44 h-44 sm:w-48 sm:h-48 mx-auto xl:mx-0 rounded-2xl overflow-hidden border border-[#262626] p-1.5 bg-[#121212]/50 group-hover:border-[#00FF66]/40 transition-colors duration-300">
                   <img
                     src="https://imgur.com/Kuisu9H.png"
-                    alt="Subair Nurudeen Adewale - Founder of Quotients Digital Horizon Limited"
+                    alt="Subair Nurudeen Adewale - Founder of Quotients Digital Horizon Ltd"
                     className="w-full h-full object-cover object-top rounded-xl filter contrast-[1.05]"
                     referrerPolicy="no-referrer"
                   />
@@ -66,8 +66,19 @@ export default function Founder({ isDarkMode }: FounderProps) {
                     Founder & Managing Director
                   </p>
                   <p className="text-[11px] font-mono tracking-widest text-[#707070] uppercase">
-                    Quotients Digital Horizon Limited
+                    Quotients Digital Horizon Ltd
                   </p>
+                  <div className="pt-2 flex justify-center xl:justify-start">
+                    <a
+                      href="https://www.linkedin.com/in/subair-nurudeen-adewale-1b46aa28b/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#202020] hover:border-[#00FF66]/30 bg-white/[0.02] hover:bg-white/[0.06] text-[10px] font-mono font-bold tracking-wider text-[#D2D2D2] hover:text-white transition-all duration-200 cursor-pointer"
+                    >
+                      <Linkedin size={11} className="text-[#00FF66]" />
+                      <span>CONNECT ON LINKEDIN</span>
+                    </a>
+                  </div>
                 </div>
 
                 {/* Short message quote */}

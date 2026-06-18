@@ -74,7 +74,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
                 <span className="text-[#00FF66] font-bold ml-1.5 text-md animate-pulse">▪</span>
               </div>
               <p className="text-[9px] font-mono tracking-widest text-[#B5B5B5] group-hover:text-[#00FF66] transition-colors">
-                DIGITAL HORIZON
+                DIGITAL HORIZON Ltd
               </p>
             </div>
           </div>

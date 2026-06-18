@@ -69,7 +69,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
                   QUOTIENTS
                 </span>
                 <p className="text-[9px] font-mono tracking-widest text-[#707070] font-bold">
-                  DIGITAL HORIZON
+                  DIGITAL HORIZON Ltd
                 </p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
             <div className="space-y-3.5 text-xs">
               <div>
                 <p className="font-semibold text-[#707070] uppercase tracking-widest text-[9.5px] font-mono font-bold">Registration Code</p>
-                <p className="mt-0.5 text-white font-mono">RC-1495142-NG</p>
+                <p className="mt-0.5 text-white font-mono">RC 9161809</p>
               </div>
 
               <div>
@@ -233,7 +233,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
 
           {/* Copyright text */}
           <div className="text-[11px] font-mono text-[#707070] text-left md:text-right w-full md:w-auto pt-4 md:pt-0 border-t md:border-t-0 border-[#1A1A1A]">
-            © 2026 Quotients Digital Horizon Limited. <span className="text-white/40 ml-1 font-bold">Intelligent Systems Architecture.</span>
+            © 2026 Quotients Digital Horizon Ltd. <span className="text-white/40 ml-1 font-bold">Intelligent Systems Architecture.</span>
           </div>
         </div>
       </div>
