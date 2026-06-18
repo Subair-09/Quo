@@ -43,7 +43,7 @@ export default function Contact({ isDarkMode, preselectedService }: ContactProps
     if (validations.length > 0) setValidations([]);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errors: string[] = [];
     
@@ -59,23 +59,46 @@ export default function Contact({ isDarkMode, preselectedService }: ContactProps
 
     setFormStatus("sending");
 
-    // Simulate reliable secure submission
-    setTimeout(() => {
-      // Save data locally
-      const pendingSubmissions = JSON.parse(localStorage.getItem("qdh_submissions") || "[]");
-      pendingSubmissions.push({ ...formData, timestamp: new Date().toISOString() });
-      localStorage.setItem("qdh_submissions", JSON.stringify(pendingSubmissions));
-
-      setFormStatus("success");
-      setFormData({
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        service: "",
-        details: ""
+    try {
+      const response = await fetch("https://formspree.io/f/mwvjdwyd", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          details: formData.details
+        })
       });
-    }, 1800);
+
+      if (response.ok) {
+        // Save data locally
+        const pendingSubmissions = JSON.parse(localStorage.getItem("qdh_submissions") || "[]");
+        pendingSubmissions.push({ ...formData, timestamp: new Date().toISOString() });
+        localStorage.setItem("qdh_submissions", JSON.stringify(pendingSubmissions));
+
+        setFormStatus("success");
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          service: "",
+          details: ""
+        });
+      } else {
+        setFormStatus("error");
+        setValidations(["Submission failed at our server proxy gateway. Please try again or email us directly."]);
+      }
+    } catch (error) {
+      setFormStatus("error");
+      setValidations(["Connectivity error. Please check your internet connection and try again."]);
+    }
   };
 
   return (
@@ -129,8 +152,8 @@ export default function Contact({ isDarkMode, preselectedService }: ContactProps
                 </div>
                 <div>
                   <p className="text-[10px] font-mono text-[#707070] uppercase tracking-wider font-bold">Urgent Phone hotline</p>
-                  <a href="tel:+2348123456789" className="font-display font-semibold text-xs tracking-wider text-white hover:text-[#00FF66] transition-colors">
-                    +234 (0) 812 345 6789
+                  <a href="tel:+2347033968648" className="font-display font-semibold text-xs tracking-wider text-white hover:text-[#00FF66] transition-colors">
+                    +234 (0) 703 396 8648
                   </a>
                 </div>
               </div>
@@ -142,7 +165,7 @@ export default function Contact({ isDarkMode, preselectedService }: ContactProps
                 <div>
                   <p className="text-[10px] font-mono text-[#707070] uppercase tracking-wider font-bold">Regional Headquarters</p>
                   <p className="text-xs font-sans leading-relaxed max-w-[280px] text-[#B5B5B5]">
-                    Horizon Technology Center, Suite 300, 10 Kingsway Road, Ikoyi, Lagos, Nigeria
+                    35 Hammed Oghere Ikotun, Lagos, Nigeria
                   </p>
                 </div>
               </div>

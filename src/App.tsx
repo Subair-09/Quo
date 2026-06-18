@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
+import Founder from "./components/Founder";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Portfolio from "./components/Portfolio";
@@ -35,6 +36,7 @@ export default function App() {
       const sections = [
         "hero",
         "about",
+        "founder",
         "services",
         "why-us",
         "portfolio",
@@ -108,6 +110,9 @@ export default function App() {
           isDarkMode={isDarkMode}
           onCtaClick={handleScrollToTargetSection}
         />
+
+        {/* Founder, Mission & Vision Section */}
+        <Founder isDarkMode={isDarkMode} />
 
         {/* Section 3 — Services */}
         <Services

@@ -9,9 +9,25 @@ export default function Footer({ isDarkMode }: FooterProps) {
   const [subEmail, setSubEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (subEmail.trim() && subEmail.includes("@")) {
+      try {
+        await fetch("https://formspree.io/f/mwvjdwyd", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            subject: "New Corporate Newsletter Registry",
+            newsletter_email: subEmail,
+            message: `New User signed up for the newsletter registry: ${subEmail}`
+          })
+        });
+      } catch (err) {
+        // Fallback gracefully so UI remains active
+      }
       setSubscribed(true);
       setSubEmail("");
       setTimeout(() => setSubscribed(false), 8000);
@@ -162,7 +178,7 @@ export default function Footer({ isDarkMode }: FooterProps) {
               <div>
                 <p className="font-semibold text-[#707070] uppercase tracking-widest text-[9.5px] font-mono font-bold">Operations Address</p>
                 <p className="mt-0.5 text-white">
-                  Horizon Tech Suite 300, 10 Kingsway Road, Ikoyi, Lagos
+                  35 Hammed Oghere Ikotun, Lagos, Nigeria
                 </p>
               </div>
 

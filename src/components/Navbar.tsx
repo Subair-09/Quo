@@ -15,6 +15,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
   const navItems = [
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
+    { id: "founder", label: "Founder" },
     { id: "services", label: "Services" },
     { id: "why-us", label: "Why Us" },
     { id: "portfolio", label: "Portfolio" },
