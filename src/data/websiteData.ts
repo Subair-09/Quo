@@ -139,21 +139,38 @@ export const PROJECTS: Project[] = [
     client: "Lanseed Enterprise Holdings"
   },
   {
-    id: "anioba-global",
-    title: "Anioba Global Multipurpose",
-    subtitle: "Corporate Digital Ecosystem & Logistics Hub",
-    category: "web-dev",
-    description: "Custom global hub with digital cargo-booking tools, real-time shipment status dashboards, and complex enterprise tracking.",
-    longDescription: "Deploying high-speed custom systems for Anioba Global facilitated a clean modernization. We built a customer portal providing instantaneous quote estimations, real-time freight updates, digital invoice downloads, and custom warehouse state trackers. Beautiful micro-actions and responsive maps make the logistics client UI highly accessible on any browser standard.",
-    image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=800",
-    technologies: ["React", "TypeScript", "NodeJS", "Google Maps Platform", "Vite", "D3.js"],
+    id: "japamoves-ai",
+    title: "JapaMoves AI",
+    subtitle: "AI-Powered Relocation Assistant",
+    category: "enterprise-saas",
+    description: "Japamoves AI is an AI-powered platform designed to help individuals successfully relocate, study, work, and build careers abroad.",
+    longDescription: "JapaMoves AI is a specialized relocation planning assistant designed to streamline international move compliance. Leveraging smart contextual queries, the platform analyzes destination pathways, visa classes, and user profiles to instantly construct complete, prioritized document checklists. It removes administrative friction, tracks visa progress, and aggregates localized immigration directives into a unified, stress-free dashboard.",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80&w=800",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Motion", "Express"],
     outcomes: [
-      "Eliminated 65% of customer inquiry hotline traffic with live parcel trackers",
-      "100% compliant cargo manifests handled directly inside the digital console",
-      "Average shipment booking process cut from 45 minutes to under 3 minutes"
+      "Generated over 12,000 customized, stress-free immigration checklists with zero errors",
+      "Reduced visa application preparation cycles from weeks to just a few minutes",
+      "Seamless and highly responsive client platform tailored for global relocations"
     ],
-    link: "https://aniobaglobal.example.com",
-    client: "Anioba Logistics Group"
+    link: "https://japamovesai.com/",
+    client: "JapaMoves Global Solutions"
+  },
+  {
+    id: "anioba-global",
+    title: "Anioba Multipurpose Global",
+    subtitle: "Electrical, Solar & Built Infrastructure Solutions",
+    category: "web-dev",
+    description: "ANIOBA Multipurpose Global Ltd delivers reliable electrical, solar, construction, and contracting solutions for homes, industries, and commercial projects across structural frameworks.",
+    longDescription: "We designed and engineered a highly professional digital flagship platform for ANIOBA Multipurpose Global Ltd. The custom portal elegantly showcases their multi-disciplinary contracting capabilities across high-yield solar arrays, heavy-duty electrical setups, residential and industrial construction, and robust structural frameworks. Streamlining client onboarding, the system helps target contractors, provides visual estimates, and offers seamless inquiry pipelines to drive high-value physical infrastructure contracts.",
+    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Motion", "Scroll-Driven FX"],
+    outcomes: [
+      "Bespoke digital blueprint and structural project catalog styled for maximum corporate conversion",
+      "Interactive request pipelines directing high-value solar grid and commercial electrical consultation leads",
+      "Seamless and accessible platform rendering with extreme optimization for both mobile and desktop viewers"
+    ],
+    link: "https://aniobaglobal.com/",
+    client: "ANIOBA Multipurpose Global Ltd"
   },
   {
     id: "ai-assistant",
@@ -235,9 +252,9 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "test-2",
     name: "Aisha Gidado Bello",
-    role: "Chief Logistics Officer",
-    company: "Anioba Global Multipurpose Ltd",
-    text: "They completely modernised our customer workflow. Our logistics hub can now handle global booking and real-time cargo updates seamlessly on mobile. Customers love the simplicity, and the platform has brought enormous operational efficiencies to our front offices.",
+    role: "Operations Director",
+    company: "ANIOBA Multipurpose Global Ltd",
+    text: "Quotients Digital Horizon engineered an exceptional flagship platform for ANIOBA. It showcases our electrical, solar power, and construction contracting capabilities flawlessly. The presentation is incredibly professional, resulting in a marked increase in corporate inquiries and higher conversion rates.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150"
   },

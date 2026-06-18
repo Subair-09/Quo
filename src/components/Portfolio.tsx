@@ -273,7 +273,18 @@ export default function Portfolio({ isDarkMode }: PortfolioProps) {
               </div>
 
               {/* Footer and exit buttons */}
-              <div className="p-6 border-t border-[#1A1A1A] flex justify-end gap-3 mt-auto bg-black/20">
+              <div className="p-6 border-t border-[#1A1A1A] flex flex-wrap justify-end gap-3 mt-auto bg-black/20">
+                {selectedProject.link && (
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider text-white border border-[#2A2A2A] hover:border-[#00FF66]/40 hover:bg-white/5 cursor-pointer transition-all duration-200 inline-flex items-center gap-1.5 font-display"
+                  >
+                    <span>VISIT LIVE SITE</span>
+                    <ExternalLink size={12} />
+                  </a>
+                )}
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="px-5 py-2.5 rounded-xl text-xs font-semibold tracking-wider cursor-pointer border border-[#1A1A1A] hover:bg-white/5 text-slate-300 transition-colors"
