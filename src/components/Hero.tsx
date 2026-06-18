@@ -2,12 +2,33 @@ import React from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Play, Brain, Cpu, Database, Blocks } from "lucide-react";
 
+const BACKGROUND_IMAGES = [
+  "https://imgur.com/9hj6ukG.png",
+  "https://imgur.com/pBvhqIz.png",
+  "https://imgur.com/NKPmuJS.png"
+];
+
 interface HeroProps {
   isDarkMode: boolean;
   onCtaClick: (id: string) => void;
 }
 
 export default function Hero({ isDarkMode, onCtaClick }: HeroProps) {
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    // Preload all background images to avoid slow-loading transitions
+    BACKGROUND_IMAGES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % BACKGROUND_IMAGES.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   const floatingBadges = [
     { 
       label: "AI Solutions", 
@@ -42,12 +63,17 @@ export default function Hero({ isDarkMode, onCtaClick }: HeroProps) {
     >
       {/* Background Image with elegant overlay using custom blend modes for high craftsmanship and legibility */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <img
-          src="https://imgur.com/9hj6ukG.png"
-          alt="Abstract futuristic systems topology blueprint"
-          className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-550 opacity-60 mix-blend-screen brightness-[0.6] contrast-[1.1]"
-          referrerPolicy="no-referrer"
-        />
+        {BACKGROUND_IMAGES.map((src, idx) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Abstract futuristic systems topology blueprint ${idx + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 mix-blend-screen brightness-[0.6] contrast-[1.1] ${
+              currentImageIndex === idx ? "opacity-60" : "opacity-0"
+            }`}
+            referrerPolicy="no-referrer"
+          />
+        ))}
         {/* Soft edge fade overlays to keep typography readable */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#050505]/75 via-[#050505]/35 to-[#050505]/75" />
         
