@@ -63,16 +63,8 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
           {/* Logo */}
           <div
             onClick={() => scrollToSection("hero")}
-            className="flex items-center space-x-2.5 cursor-pointer group"
+            className="flex items-center cursor-pointer group"
           >
-            <div className="relative w-9 h-9 flex items-center justify-center rounded-xl bg-black border border-[#1A1A1A] hover:border-[#00FF66]/30 shadow-lg overflow-hidden p-0.5 transition-all">
-              <img
-                src="https://imgur.com/LS8v8Bd.png"
-                alt="Quotients Logo"
-                className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
-                referrerPolicy="no-referrer"
-              />
-            </div>
             <div>
               <div className="flex items-center">
                 <span className="font-display font-black tracking-tight text-md text-white">
@@ -92,10 +84,10 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+                className={`relative px-3.5 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all duration-300 transform cursor-pointer ${
                   activeSection === item.id
-                    ? "text-[#00FF66] bg-[#00FF66]/10 border border-[#00FF66]/20 glow-emerald-sm font-bold"
-                    : "text-[#B5B5B5] hover:text-white hover:bg-white/5 border border-transparent"
+                    ? "text-[#00FF66] bg-[#00FF66]/10 border border-[#00FF66]/20 glow-emerald-sm font-bold scale-[1.02]"
+                    : "text-white/90 hover:text-[#00FF66] hover:bg-[#00FF66]/5 border border-transparent hover:border-[#00FF66]/20 hover:scale-[1.05] active:scale-[0.95] shadow-sm hover:shadow-[0_0_12px_rgba(0,255,102,0.15)]"
                 }`}
               >
                 {item.label}
@@ -139,10 +131,10 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                  className={`block w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 transform border-l-2 ${
                     activeSection === item.id
-                      ? "text-[#00FF66] bg-[#00FF66]/15 font-bold"
-                      : "text-[#B5B5B5] hover:bg-white/5 hover:text-white"
+                      ? "text-[#00FF66] bg-[#00FF66]/15 font-bold pl-6 border-[#00FF66]"
+                      : "text-white/90 border-transparent hover:bg-[#00FF66]/5 hover:text-[#00FF66] hover:pl-6 hover:border-[#00FF66]/40"
                   }`}
                 >
                   {item.label}

@@ -39,43 +39,46 @@ export default function AiTraining({ isDarkMode, onCtaClick }: AiTrainingProps) 
     {
       id: "ind-fullstack",
       title: "Full-Stack AI Application Engineering",
-      desc: "Go from fundamental scripting to building complete real-world applications. Connect responsive React frontends directly to custom Express servers and persistent databases.",
+      desc: "Learn to build advanced software with AI. Construct fully operational web applications complete with custom API key management, robust server-side databases, identity authentication, cloud storage accounts, and dynamic image manipulation.",
       duration: "4 Weeks Hybrid",
-      level: "Intermediate",
+      level: "Intermediate to Advanced",
       outcome: "Production-Grade Full-Stack AI Portfolio",
       modules: [
-        "React Frontend Layout & Real-time AI stream rendering",
-        "Express Backend endpoints and client post routing",
-        "Database integrations & persistent user states",
-        "API Key Lifecycle & Secret Environment Encryption"
+        "Building and deploying full-stack apps with AI support",
+        "Integrating custom external APIs securely",
+        "Database schema setup and state persistence",
+        "Secure user authentication and local storage sync",
+        "Dynamic file structures and server-managed image manipulation"
       ]
     },
     {
-      id: "ind-backend-keys",
-      title: "AI Backend & Secure Key Architectures",
-      desc: "Learn to build safe server-side middlewares. Fully secure API keys away from the client browser, handle Rate Limits, format payloads, and manage custom API pipelines.",
+      id: "ind-frontend",
+      title: "AI Frontend Engineering",
+      desc: "Unlock frontend development using AI. Quickly conceptualize modular React layouts, write modern responsive stylesheet definitions, design high-fidelity forms, and bind dynamic workflows to external Google Sheet & Google Drive integrations.",
       duration: "3 Weeks Live Intensive",
-      level: "Advanced",
-      outcome: "Certified Secure AI Backend Credentials",
+      level: "Beginner Friendly",
+      outcome: "Interactive Web Apps & Form Dashboards",
       modules: [
-        "Hiding secrets & environment wrapper variables",
-        "Proxying external LLM streams on server threads",
-        "Token usage logging, tracking & memory caches",
-        "Authentication guardrails & database security rules"
+        "Learn frontend engineering framework standards using AI",
+        "Building professional input forms to collect records",
+        "External tool triggers, API payload transport, and workflows",
+        "Google Sheets integration for lightweight records database Setup",
+        "Google Drive storage connections for documents and media"
       ]
     },
     {
-      id: "ind-db-ux",
-      title: "Frontend AI UX & Database Workspace Sync",
-      desc: "Master high-fidelity user interactions. Align state management with remote databases (Firestore/PostgreSQL) and build highly polished interactive dynamic dashboards.",
-      duration: "2 Weeks Self-Paced",
-      level: "Beginner Friendly",
-      outcome: "Responsive Database Sync Dashboard Projects",
+      id: "ind-kids",
+      title: "Kids AI Engineering (Ages 13 to 18)",
+      desc: "Designed specifically for younger minds aged 13 to 18. This streamlined curriculum introduces system layout parameters and logic, teaching them to construct real applications and fun projects entirely fueled by modern AI helpers.",
+      duration: "6 Weeks Cohort",
+      level: "Ages 13 to 18",
+      outcome: "Teen Digital Innovator Project Portfolio",
       modules: [
-        "Optimistic UI state updates for immediate responses",
-        "Tailwind CSS custom chat and markdown output blocks",
-        "Durable browser state fallback configurations",
-        "Synchronizing schema-backed database mutations"
+        "Step-by-step introduction to computing logic with AI",
+        "Designing custom websites and styling them collaboratively",
+        "Building input forms & interactive games from basic blueprints",
+        "Applying pre-built AI APIs to fuel custom creations",
+        "Safe digital deployment & project presentation techniques"
       ]
     }
   ];
@@ -83,45 +86,45 @@ export default function AiTraining({ isDarkMode, onCtaClick }: AiTrainingProps) 
   // Corporate / Organization Training Programs list
   const organizationPrograms = [
     {
-      id: "org-align",
-      title: "Corporate Full-Stack AI Alignment Bootcamp",
-      desc: "Align your enterprise department to securely draft, build, and deploy production-grade AI tools. Train developers on coupling backend wrappers, frontends, and schemas.",
+      id: "org-automation",
+      title: "AI Workplace Automation & Integration",
+      desc: "Simplify work routines for your business teams. Learn how to leverage modern AI tools to construct functional intake sheets, gather internal feedback records, and link automatic flows between Google Sheets, Drive, and corporate communication tools.",
       duration: "2 Weeks Hybrid Cohort",
-      level: "Technical Team",
-      outcome: "Fully Standardized Internal App Development Kit",
+      level: "Non-Technical Teams & Ops",
+      outcome: "Automated Workflows & Integrated Data Pipes",
       modules: [
-        "Unified server proxy routing standard operations",
-        "Safe centralized credential & API Key vaults",
-        "Durable schema syncs using modern Drizzle/ORM structures",
-        "Evaluating streaming endpoints & load-testing servers"
+        "Constructing smart data forms using AI logic assistant blocks",
+        "Configuring automatic updates to Google Sheets & Drive systems",
+        "Scheduling automatic notifications and alerts across departments",
+        "Streamlining document assembly and reports generation with AI templates"
       ]
     },
     {
-      id: "org-access",
-      title: "Security, Compliance & Key Governance Workshop",
-      desc: "Crucial workshops for CTOs, IT managers, and security leads on restricting access tokens, setting up environment scopes, preventing prompt injections, and secure logging.",
-      duration: "1 Week Live cohort",
-      level: "IT Admin & Security Leads",
-      outcome: "Corporate API Safety Protocol Playbook",
+      id: "org-fullstack",
+      title: "Team-Based Full-Stack AI Engineering",
+      desc: "Train your software development and IT teams to quickly build robust internal platforms. Accelerate project delivery by applying AI guidelines to compile web interfaces, assemble API backends, control user authentications, and host secure databases.",
+      duration: "4 Weeks Comprehensive Intensive",
+      level: "Technical & Developer Teams",
+      outcome: "Custom Corporate Full-Stack Software Suite",
       modules: [
-        "Blocking client-side API credential exposures",
-        "Setting up custom local inference gateways",
-        "Real-time PII anonymization in request pipes",
-        "Role-based token access & consumption budgets"
+        "Designing modular frontend and backend architectures with AI assistance",
+        "Incorporating secure workspace credential encryption guidelines",
+        "Connecting custom local or cloud relational databases",
+        "Managing automated backups, storage structures, and image modifications"
       ]
     },
     {
-      id: "org-rapid",
-      title: "Accelerated Concept-to-Production Workshop",
-      desc: "Equip product management, system architects, and development leads to model, blueprint, and build complete responsive full-stack applications in record time.",
-      duration: "3 Days On-site Intensive",
-      level: "Leadership & Managers",
-      outcome: "Tailored Multi-Screen Prototype Playbook",
+      id: "org-strategy",
+      title: "Executive AI Blueprinting & Rapid Prototyping",
+      desc: "Give managers, system architects, and technical decision-makers the tools to quickly turn high-level concepts into interactive, high-fidelity prototypes. Establish unified system structures, security standards, and API quota budgets.",
+      duration: "3 Days On-Site Intensive",
+      level: "Leadership & Product Leads",
+      outcome: "Strategic Enterprise AI App Roadmap",
       modules: [
-        "Drafting decoupled UI frames & component libraries",
-        "Lowcode-to-highcode server route translations",
-        "Simplified lightweight schema structures",
-        "Fast-track cloud deployments & production testing"
+        "Rapidly wireframing custom digital solutions from clear outlines",
+        "Validating prototype database scales and responsive layout controls",
+        "Implementing secure key guidelines and user credential rules",
+        "Analyzing cost-to-performance curves for production-bound AI services"
       ]
     }
   ];

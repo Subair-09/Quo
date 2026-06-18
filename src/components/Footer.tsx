@@ -46,16 +46,8 @@ export default function Footer({ isDarkMode }: FooterProps) {
           <div className="lg:col-span-4 space-y-6 text-left">
             <div
               onClick={() => scrollToSection("hero")}
-              className="flex items-center space-x-2 cursor-pointer group w-fit"
+              className="flex items-center cursor-pointer group w-fit"
             >
-              <div className="relative w-9 h-9 flex items-center justify-center rounded-xl bg-[#121212] border border-[#1A1A1A] shadow-md overflow-hidden p-0.5">
-                <img
-                  src="https://imgur.com/LS8v8Bd.png"
-                  alt="Quotients Logo"
-                  className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-110 animate-pulse"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
               <div>
                 <span className="font-display font-extrabold tracking-tight text-sm text-white group-hover:text-[#00FF66] transition-colors">
                   QUOTIENTS
