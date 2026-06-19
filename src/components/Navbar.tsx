@@ -34,13 +34,10 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
   }, []);
 
   const scrollToSection = (id: string) => {
-    setIsOpen(false);
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
@@ -48,19 +45,28 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
         behavior: "smooth"
       });
     }
+    
+    // Delay closing of mobile menu slightly to let click register fully and smooth scroll start on mobile devices
+    if (isOpen) {
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 350);
+    }
   };
 
   return (
     <nav
       id="site-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#050505]/95 border-b border-[#1A1A1A] backdrop-blur-md shadow-2xl py-3.5"
-          : "bg-transparent border-b border-transparent py-5"
+        scrolled || isOpen
+          ? "bg-[#050505]/98 border-b border-[#1A1A1A] backdrop-blur-md shadow-2xl"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className={`flex items-center justify-between transition-all duration-300 ${
+          scrolled || isOpen ? "py-3.5" : "py-5"
+        }`}>
           {/* Logo */}
           <div
             onClick={() => scrollToSection("hero")}
@@ -108,10 +114,10 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
           <div className="flex lg:hidden items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg cursor-pointer text-white hover:bg-white/10"
+              className="p-2 rounded-lg cursor-pointer text-white hover:bg-white/10 transition-colors"
               aria-label="Toggle main menu"
             >
-              {isOpen ? <X size={20} className="text-[#00FF66]" /> : <Menu size={20} />}
+              {isOpen ? <X size={22} className="text-[#00FF66]" /> : <Menu size={22} />}
             </button>
           </div>
         </div>
@@ -124,15 +130,15 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden border-t border-[#1A1A1A] mt-3 bg-[#0D0D0D]/95 backdrop-blur-lg"
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="lg:hidden border-t border-[#1A1A1A] bg-[#050505]/98 backdrop-blur-xl shadow-2xl max-h-[80vh] overflow-y-auto"
           >
-            <div className="px-4 pt-2 pb-6 space-y-1">
+            <div className="px-4 pt-3 pb-6 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 transform border-l-2 ${
+                  className={`block w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 transform border-l-2 cursor-pointer ${
                     activeSection === item.id
                       ? "text-[#00FF66] bg-[#00FF66]/15 font-bold pl-6 border-[#00FF66]"
                       : "text-white/90 border-transparent hover:bg-[#00FF66]/5 hover:text-[#00FF66] hover:pl-6 hover:border-[#00FF66]/40"
@@ -144,10 +150,9 @@ export default function Navbar({ isDarkMode, setIsDarkMode, activeSection }: Nav
               
               <button
                 onClick={() => {
-                  setIsOpen(false);
                   scrollToSection("contact");
                 }}
-                className="mt-4 block w-full text-center py-3 bg-[#00FF66] text-black font-bold rounded-xl text-sm transition-all shadow"
+                className="mt-4 block w-full text-center py-3.5 bg-[#00FF66] text-black font-bold rounded-xl text-sm transition-all shadow hover:bg-[#00E65C] cursor-pointer"
               >
                 GET CONSULTATION
               </button>
