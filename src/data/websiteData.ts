@@ -242,30 +242,30 @@ export const TRAINING_PROGRAMS: TrainingProgram[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: "test-1",
-    name: "Dr. Kingsley Okonjo",
-    role: "Director of Enterprise Development",
-    company: "Lanseed Group Solutions",
-    text: "Working with Quotients Digital Horizon was a game-changer for our operating system. They understood our complex pipeline, designed a gorgeous interface, and deployed a secure, ultra-fast web workspace. The level of engineering discipline and attention to detail they bring is outstanding.",
+    name: "Mr. Olawusi Benjamin",
+    role: "Graphic Designer",
+    company: "Landseed Nigeria",
+    text: "Quotients Digital Horizon completely transformed Landseed Nigeria's digital presence. They engineered a stunning real estate investment and management platform that showcases our premier properties with gorgeous visual assets and elegant map layouts. Presenting our structural designs, pricing modules, and rental tracking dashboards has never been more seamless or visually impactful for our clients.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
+    image: "https://imgur.com/c3x2DO0.png"
   },
   {
     id: "test-2",
-    name: "Aisha Gidado Bello",
+    name: "Mr. Ismail Ayoyinka Adebayo",
     role: "Operations Director",
     company: "ANIOBA Multipurpose Global Ltd",
     text: "Quotients Digital Horizon engineered an exceptional flagship platform for ANIOBA. It showcases our electrical, solar power, and construction contracting capabilities flawlessly. The presentation is incredibly professional, resulting in a marked increase in corporate inquiries and higher conversion rates.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150"
+    image: "https://imgur.com/02S7TDI.png"
   },
   {
     id: "test-3",
-    name: "Marcus Sterling",
-    role: "Founder & CTO",
-    company: "CoreAlpha Operations",
-    text: "We requested an automated invoice processing portal driven by AI. Quotients didn't just write a mock template; they built a solid, functional tool integrated with robust models. Our administrative burden has plummeted, making this one of our best software investments.",
+    name: "Ms. Adeyemi Faridah Adedoja",
+    role: "Customer Service Representative",
+    company: "Japamoves AI",
+    text: "Quotients Digital Horizon built an incredible AI-powered assistant and inquiry routing system for Japamoves AI. Our customer service efficiency has risen dramatically, allowing us to respond to relocation and travel requests instantly with pristine accuracy. They did an exceptional job translating complex user pathways into a simple, high-performing workspace.",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
+    image: "https://imgur.com/vjWsk7x.png"
   }
 ];
 
